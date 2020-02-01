@@ -24,7 +24,7 @@ module.exports = function(app) {
   // serve simon says game
   app.get("/simonSays", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("hangman", {
+      res.render("simonSays", {
         msg: "Welcome!",
         // examples: 
       });
