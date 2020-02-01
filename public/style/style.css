@@ -1,0 +1,30 @@
+/* this is for styling the main arcade page */
+
+#body {
+  background-image: url(../images/1.jpg);
+  background-color: #cccccc;
+  background-size: cover;
+}
+
+#login-container {
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+#play-now-btn {
+  background-color: rgb(253, 0, 219);
+  color: white;
+}
+
+#game-name {
+  color: rgb(207, 0, 243);
+  font-weight: bold;
+  font-size: large;
+  background-color: rgb(29, 205, 218);
+  border-radius: 25px;
+}
+
+#img-carousel {
+  width: 550px;
+  height: 350px;
+}
