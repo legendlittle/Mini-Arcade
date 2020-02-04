@@ -7,11 +7,11 @@
 @import url("http://fonts.googleapis.com/css?family=Permanent+Marker");
 @import url("http://fonts.googleapis.com/css?family=Monoton");
 
-body {
+#body {
   position: relative;
   color: rgb(255, 32, 32);
   background-image: url(../images/hangman.jpg);
-  background-size: cover;
+  /* background-size: cover; */
 }
 
 * {
@@ -76,7 +76,7 @@ body {
   left: 500px;
 }
 
-h2 {
+#music {
   font-size: 50px;
 }
 
