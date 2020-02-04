@@ -2,8 +2,34 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var db = require("./models");
+var passport = require('passport')
+var session = require('express-session')
+ 
+  
+
 var app = express();
 var PORT = process.env.PORT || 3000;
+
+
+// For Passport
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); 
+
+//Routes
+ 
+var authRoute = require('./controllers/auth')(app, passport);
+ 
+ 
+//load passport strategies
+ 
+require('./config/passport/passport')(passport, db.user);
+ 
+
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
