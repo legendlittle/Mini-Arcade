@@ -35,9 +35,6 @@ $(document).ready(function () {
     textRand = Math.floor(textRand);
     promptRand = Math.random() * 4;
     promptRand = Math.floor(promptRand)
-    console.log(btnRand)
-    console.log(wordRand)
-    console.log(textRand)
     if (btnRand === wordRand) {
       Randomize();
     }
@@ -96,7 +93,8 @@ $(document).ready(function () {
   };
 
   $(document).on('click', '.btn', function () {
-
+    $('.score').html(score);
+    
     var color = $(this).attr('class')
     if (color.includes(`text-${prompt}`)) {
       console.log('correct');

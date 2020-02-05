@@ -1,10 +1,11 @@
 /* this is for styling the main arcade page */
 
-#index-body {
+/* #index-body {
   background-image: url(../images/1.jpg);
   background-color: #cccccc;
   background-size: cover;
-}
+  background-repeat: no-repeat;
+} */
 
 #login-container {
   padding-bottom: 50px;
@@ -27,4 +28,8 @@
 #img-carousel {
   width: 550px;
   height: 350px;
+}
+
+body {
+  background-color: #a572ff75;
 }
