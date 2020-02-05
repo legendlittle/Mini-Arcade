@@ -18,7 +18,6 @@ $(document).ready(function () {
     'green'
   ]
 
-
   var btnRand = 0;
   var wordRand = 0;
   var textRand = 0;
@@ -70,11 +69,9 @@ $(document).ready(function () {
     console.log(btnColors, wordColors, words);
     makeButtons();
 
-
-
   }
-  gameStart();
 
+  gameStart();
 
   function checkAnswer() {
     prompt = `${words[promptRand]}`
@@ -93,12 +90,11 @@ $(document).ready(function () {
         prompt = 'success'
         break;
 
-
     };
     console.log(prompt)
 
-
   };
+
   $(document).on('click', '.btn', function () {
 
     var color = $(this).attr('class')
@@ -118,6 +114,4 @@ $(document).ready(function () {
 
   })
 
-
-
-})
+});

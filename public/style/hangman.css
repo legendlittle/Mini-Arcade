@@ -7,12 +7,15 @@
 @import url("http://fonts.googleapis.com/css?family=Permanent+Marker");
 @import url("http://fonts.googleapis.com/css?family=Monoton");
 
-#body {
+#hangman-body {
   position: relative;
   color: rgb(255, 32, 32);
-  background-image: url(../images/hangman.jpg);
-  /* background-size: cover; */
-}
+  background-color: #cccccc;
+  background-image: url('../images/Hangman.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+} 
 
 * {
   font-family: "Permanent Marker", cursive;
@@ -70,18 +73,14 @@
   -webkit-text-stroke: 4px #f008b7;
 }
 
-#container {
+/* #container {
   position: absolute;
   top: 300px;
   left: 500px;
-}
+} */
 
 #music {
   font-size: 50px;
-}
-
-div {
-  text-align: center;
 }
 
 .band-image {
@@ -98,6 +97,7 @@ div {
 
 #game-section {
   float: left;
+  text-align: center;
   width: 550px;
   height: 550px;
   padding: 20px;
