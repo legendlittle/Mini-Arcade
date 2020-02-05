@@ -52,7 +52,7 @@ var wordGuessGame = {
       picture: "../images/tekken.jpg",
     },
     streetfighter: {
-      picture: "../images/streetfighter.jpg",
+      picture: "../images/streetfighetr.jpg",
     },
     starfox: {
       picture: "../images/starfox.jpg",

@@ -30,8 +30,6 @@ function random() {
 }
 
 
-
-
 var input;
 
 function display() {
@@ -46,7 +44,6 @@ function makeButtons() {
 
 };
 
-
 var answer = [];
 var simonTurn = true;
 function check() {
@@ -57,10 +54,10 @@ function check() {
     $('.score').html(score);
     alert('Correct! Click next turn for the next round!')
   } else {
-    alert("You weren't paying attention :(")
+    $('#myModal').modal('toggle')
+    console.log("game over");
   }
 }
-
 
 $(document).ready(function () {
   $('#start').on('click', function () {
@@ -103,14 +100,21 @@ $(document).ready(function () {
 
     }
     answer.push(input);
-    console.log(answer);
-    console.log(simon);
+
 
   });
 
   $('#end').on('click', function () {
     check();
     answer = [];
+  })
+
+  $('.home-link').on('click', function () {
+    //Do a get request to our homepage
+    window.location.href = "/";
+  })
+  $('.again').on('click', function () {
+    location.reload();
   })
 
 });
