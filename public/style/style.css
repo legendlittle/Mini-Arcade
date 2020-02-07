@@ -33,3 +33,8 @@
 body {
   background-color: #a572ff75;
 }
+
+#gamepad {
+  size: 100%;
+  color: red;
+}

@@ -9,12 +9,7 @@
 
 #hangman-body {
   position: relative;
-  color: rgb(255, 32, 32);
-  background-color: #cccccc;
-  background-image: url('../images/Hangman.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  color: rgb(243, 19, 19);
 } 
 
 * {
@@ -63,10 +58,10 @@
   margin-left: 400px;
   font-family: "Mr Dafoe", cursive;
   font-size: 160px;
-  color: #f32f2f;
+  color: #f03e3e;
   filter: drop-shadow(2px 2px 20px #f0084e);
   transform: rotate(-15deg);
-  -webkit-text-stroke: 1px #1a0b0b;
+  -webkit-text-stroke: 1px #f0081b;
 }
 
 .windows .dreams {
