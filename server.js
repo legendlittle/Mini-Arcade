@@ -4,8 +4,8 @@ var exphbs = require("express-handlebars");
 var db = require("./models");
 var passport = require('passport')
 var session = require('express-session')
- 
-  
+
+
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -18,17 +18,16 @@ app.use(session({
   saveUninitialized: true
 })); // session secret
 app.use(passport.initialize());
-app.use(passport.session()); 
+app.use(passport.session());
 
 //Routes
- 
-var authRoute = require('./controllers/auth')(app, passport);
- 
- 
+
+
+
 //load passport strategies
- 
-require('./config/passport/passport')(passport, db.user);
- 
+
+require('./config/passport/passport.js')(passport, db.user);
+
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -43,6 +42,7 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 // Routes
+require('./controllers/auth')(app, passport);
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 var syncOptions = { force: false };
@@ -52,8 +52,8 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync(syncOptions).then(function () {
+  app.listen(PORT, function () {
     console.log(
       "==> :earth_americas:  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
