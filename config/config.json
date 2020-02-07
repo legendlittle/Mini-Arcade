@@ -16,6 +16,10 @@
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
+    "username": "root",
+    "password": "Charza13#",
+    "database": "project2db",
+    "host": "localhost",
     "dialect": "mysql"
   }
 }
