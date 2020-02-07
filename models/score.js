@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
 
     Score.associate = function (models) {
          
-        Score.belongsTo(models.User, {
+        Score.belongsTo(models.user, {
             foreignKey: {
                 allowNull: false
             }
