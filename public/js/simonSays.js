@@ -37,9 +37,9 @@ function display() {
 }
 
 function makeButtons() {
-  $('#buttons').empty();
+  $('#simonBtns').empty();
   for (var i = 0; i < 5; i++) {
-    $('#buttons').append(`<div><button type="button" id=btn${i} class="btn btn-lg btn-block ans ${buttons[i]} ">  </button></div> <br>`)
+    $('#simonBtns').append(`<div><button type="button" id=btn${i} class="btn btn-lg btn-block ans ${buttons[i]} ">  </button></div> <br>`)
   }
 
 };
@@ -51,7 +51,7 @@ function check() {
     simonTurn = true;
     console.log("Simon's turn")
     score++;
-    $('.score').html(score);
+    $('.simonScore').html(score);
     alert('Correct! Click next turn for the next round!')
   } else {
     $('#myModal').modal('toggle')

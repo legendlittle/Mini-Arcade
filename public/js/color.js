@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+  var time = 5;
+
   var btnColors = [
     'btn-primary',
     'btn-danger',
@@ -48,10 +51,28 @@ $(document).ready(function () {
     }
   }
 
+  function count() {
+    intervalId = setInterval(function () {
+      if (time === 0) {
+        clearInterval(intervalId);
+        $('#myModal').modal('toggle')
+      }
+      else {
+        time--;
+        $('.time').html(time);
+      }
+    }, 1000);
+  }
+  $('#colorStart').on('click', function (e) {
+    e.preventDefault()
+    count();
+    gameStart();
+  })
+
   function makeButtons() {
     //We will need to empty the buttons after an answer has been selected
     for (var i = 0; i < 4; i++) {
-      $('#buttons').append(`<div><button type="button" id=btn${i} class="btn btn-lg btn-block ${btnColors[i]} ${wordColors[i]}"> ${words[i]} </button></div>`)
+      $('#colorGameBtn').append(`<div><button type="button" id=btn${i} class="btn btn-lg btn-block ${btnColors[i]} ${wordColors[i]}"> ${words[i]} </button></div>`)
     }
 
   };
@@ -93,16 +114,16 @@ $(document).ready(function () {
   };
 
   $(document).on('click', '.btn', function () {
-    $('.score').html(score);
-    
+    $('.colorScore').html(score);
+
     var color = $(this).attr('class')
     if (color.includes(`text-${prompt}`)) {
       console.log('correct');
       score++;
       // console.log(score);
-      $('.score').html(score);
+      $('.colorScore').html(score);
     }
-    $('#buttons').empty();
+    $('#colorGameBtn').empty();
     Randomize();
     shiftArray(btnColors, btnRand);
     shiftArray(wordColors, wordRand);
@@ -110,6 +131,13 @@ $(document).ready(function () {
     makeButtons();
     checkAnswer();
 
+  })
+
+  $('.home-link').on('click', function () {
+    window.location.href = '/'
+  })
+  $('.again').on('click', function () {
+    location.reload();
   })
 
 });
