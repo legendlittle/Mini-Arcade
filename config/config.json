@@ -1,21 +1,21 @@
 {
   "development": {
       "username": "root",
-      "password": "ryanb1998",
+      "password": "Charza13#",
       "database": "project2db",
       "host": "localhost",
       "dialect": "mysql"
   },
   "test": {
       "username": "root",
-      "password": "ryanb1998",
+      "password": "Charza13#",
       "database": "project2db",
       "host": "localhost",
       "dialect": "mysql"
   },
   "production": {
       "username": "root",
-      "password": "ryanb1998",
+      "password": "Charza13#",
       "database": "project2db",
       "host": "localhost",
       "dialect": "mysql"

@@ -139,5 +139,12 @@ $(document).ready(function () {
   $('.again').on('click', function () {
     location.reload();
   })
-
+  $('#save').on('click', function () {
+    var obj = {
+      game: 'cg',
+      points: score,
+      userId: 1
+    }
+    $.post('/scores', obj);
+  });
 });
