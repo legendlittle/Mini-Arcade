@@ -33,6 +33,16 @@ require('./config/passport/passport.js')(passport, db.user);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+
+// For Passport
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Handlebars
 app.engine(
   "handlebars",
@@ -41,6 +51,12 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
+
+require('./config/passport/passport.js')(passport, db.user);
+
+// controllers
+require('./controllers/auth')(app, passport);
+
 // Routes
 require('./controllers/auth')(app, passport);
 require("./routes/apiRoutes")(app);

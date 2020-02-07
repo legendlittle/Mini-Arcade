@@ -30,8 +30,6 @@ function random() {
 }
 
 
-
-
 var input;
 
 function display() {
@@ -39,13 +37,12 @@ function display() {
 }
 
 function makeButtons() {
-  $('#buttons').empty();
+  $('#simonBtns').empty();
   for (var i = 0; i < 5; i++) {
-    $('#buttons').append(`<div><button type="button" id=btn${i} class="btn btn-lg btn-block ans ${buttons[i]} ">  </button></div> <br>`)
+    $('#simonBtns').append(`<div><button type="button" id=btn${i} class="btn btn-lg btn-block ans ${buttons[i]} ">  </button></div> <br>`)
   }
 
 };
-
 
 var answer = [];
 var simonTurn = true;
@@ -54,13 +51,13 @@ function check() {
     simonTurn = true;
     console.log("Simon's turn")
     score++;
-    $('.score').html(score);
+    $('.simonScore').html(score);
     alert('Correct! Click next turn for the next round!')
   } else {
-    alert("You weren't paying attention :(")
+    $('#myModal').modal('toggle')
+    console.log("game over");
   }
 }
-
 
 $(document).ready(function () {
   $('#start').on('click', function () {
@@ -103,14 +100,21 @@ $(document).ready(function () {
 
     }
     answer.push(input);
-    console.log(answer);
-    console.log(simon);
+
 
   });
 
   $('#end').on('click', function () {
     check();
     answer = [];
+  })
+
+  $('.home-link').on('click', function () {
+    //Do a get request to our homepage
+    window.location.href = "/";
+  })
+  $('.again').on('click', function () {
+    location.reload();
   })
 
 });

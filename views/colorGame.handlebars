@@ -1,0 +1,63 @@
+<div class='bg-dark'>
+  <div class='container'>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Game Over!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Choose if you want to go back to the arcade or play again!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary btn-link home-link" href="#">Back
+              to the
+              arcade!</button>
+            <button type="button" class="btn btn-outline-primary btn-link again" href="#">Play
+              Again!</button>
+            <button type="button" id="save" class="btn btn-outline-primary btn-link home-link" href="#">Save
+              Score</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid bg-success">
+      <div class="container">
+        <h1 class="display-4 pull-right text-center font-weight-bold">
+          <span class='text-danger'> The </span class=''>
+          <span class='text-warning'> Color </span class=''>
+          <span class='text-primary'> Game!</span>
+        </h1>
+        <p class="lead text-center font-weight-bold text-light">Pick the correct answer as quickly as possible!
+        </p>
+        <h3 class='lead text-center font-weight-bold text-light'>Disclaimer: This game not sponsored by Google
+          Chrome
+        </h3>
+        ​
+        <h2 class="text-light"> Your High score: <span id='colorHiScore'> </span></h2>
+        <h2 class='mt-3 text-light'>Your score: <span class='colorScore'>
+            ​
+          </span></h2>
+        ​<div class='text-center text-white font-weight-bold'>
+          Time left: <span class='time'> </span>
+        </div>
+        ​
+      </div>
+    </div>
+    <div>
+      <button id='colorStart' class='btn btn-outline-info mx-auto'>Start Game</button>
+      <h1 id='prompt' class='text-center text-light'> Select the <span class='new-prompt text-light'> </span>
+        colored Text
+      </h1>
+    </div>
+    <!-- These buttons will be dynamically created with random color and text -->
+    <div class='mt-3' id='colorGameBtn'>
+      ​
+    </div>
+  </div>
+</div>

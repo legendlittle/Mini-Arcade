@@ -52,7 +52,7 @@ var wordGuessGame = {
       picture: "../images/tekken.jpg",
     },
     streetfighter: {
-      picture: "../images/streetfighter.jpg",
+      picture: "../images/streetfighetr.jpg",
     },
     starfox: {
       picture: "../images/starfox.jpg",
@@ -239,7 +239,7 @@ var wordGuessGame = {
       this.wins = this.wins + 1;
 
       // Update wins on the page.
-      document.querySelector("#wins").innerHTML = this.wins;
+      document.querySelector("#hangWins").innerHTML = this.wins;
 
       // Update the image of the game on the page.
       document.querySelector("#band-div").innerHTML =
@@ -247,7 +247,7 @@ var wordGuessGame = {
         this.wordsToPick[this.wordInPlay].picture + "' alt='" +
         this.wordsToPick[this.wordInPlay].song + "'>";
 
-
+        $('#myModal').modal('toggle')
       // return true, which will trigger the restart of our game in the updatePage function.
       return true;
     }

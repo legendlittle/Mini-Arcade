@@ -1,13 +1,18 @@
 <div class="container" id="index-body">
 
   <div class="row mb-5">
-    <div class="col-md-3">
-      <button class="btn btn-danger btn-lg" id="login">Login/Sign-Up</button>
+    <div class="col-md-2">
+      {{!-- <button class="btn btn-danger btn-lg" href="/signin" id="loginBtn">Login</button> --}}
+      <a class="btn btn-danger btn-lg" href="/signin" id="loginBtn">Login</a>
+    </div>
+    <div class="col-md-2">
+      {{!-- <button class="btn btn-danger btn-lg" href="/signup" id="signUp">Sign-Up</button> --}}
+      <a class="btn btn-danger btn-lg" href="/signup" id="signUp">Sign-Up</a>
     </div>
   </div>
 
   <div class="row mt-5">
-    <div class="col-md-4"></div>
+    <div class="col-md-3"></div>
     <div class="col-md-6">
       <div id="carouselExampleCaptions" class="carousel slide mt-5" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -20,21 +25,21 @@
             <img src="/images/Hangman.jpg" class="d-block w-100" id="img-carousel" alt="samplePic">
             <div class="carousel-caption d-none d-md-block">
               <h3 id="game-name">Hanging With The Boyzzz</h3>
-              <a class="btn btn-lg" target="_blank" href="/hangman" id="play-now-btn">Play Now!</a>
+              <a class="btn btn-lg" href="/hangman" id="play-now-btn">Play Now!</a>
             </div>
           </div>
           <div class="carousel-item">
             <img src="/images/simon-says.jpg" id="img-carousel" class="d-block w-100" alt="samplePic">
             <div class="carousel-caption d-none d-md-block">
               <h3 id="game-name">Simon Sayzzz</h3>
-              <a class="btn btn-lg" target="_blank" href="/simonSays" id="play-now-btn">Play Now!</a>
+              <a class="btn btn-lg" href="/simonSays" id="play-now-btn">Play Now!</a>
             </div>
           </div>
           <div class="carousel-item">
             <img src="/images/roygbiv.png" id="img-carousel" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h3 id="game-name">The Color Game</h3>
-              <a class="btn btn-lg" target="_blank" href="" id="play-now-btn">Play Now!</a>
+              <a class="btn btn-lg" href="/colorGame" id="play-now-btn">Play Now!</a>
             </div>
           </div>
         </div>
@@ -48,8 +53,14 @@
         </a>
       </div>
     </div>
-    <div class="col-md-2"></div>
+
+    <div class="col-md-3"></div>
 
   </div>
 
+  <div class="row">
+    <div class="col-md-3"></div>
+    <i class="fas fa-gamepad" id="gamepad"></i>
+    <div class="col-md-3"></div>
+  </div>
 </div>
