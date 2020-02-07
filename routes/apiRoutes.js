@@ -1,24 +1,49 @@
 var db = require("../models");
+var sequelize = require('sequelize')
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.json({ error: "401:Not authenticated" });
 
-module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+}
+module.exports = function (app) {
+  app.get("/scores", isLoggedIn, function (req, res) {
+    db.user.findAll({
+      attributes: ['username'],
+      include: [{ model: db.Score, attributes: ['game', 'points'] }]
+    }).then(function (dbExamples) {
       res.json(dbExamples);
     });
   });
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  app.post("/scores", isLoggedIn, function (req, res) {
+    db.Score.create(
+      {
+        game: req.body.game,
+        points: req.body.points,
+        userId: req.user.id
+      }
+    ).then(function (score) {
+      res.json(score);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
+  app.get('/:game/hiscores', isLoggedIn, function (req, res) {
+    db.Score.findAll({
+      where: {
+        game: req.params.game
+      },
+      include: [{ model: db.user, attributes: ['username'] }],
+      attributes: ['game',
+        [sequelize.fn('MAX', sequelize.col('points')), 'hiscore']
+      ]
+
+
+
+    }).then(function (data) {
+      res.json(data);
+    })
+  })
 };
