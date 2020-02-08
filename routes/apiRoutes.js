@@ -46,4 +46,22 @@ module.exports = function (app) {
       res.json(data);
     })
   })
+
+  app.get('/:user/best', isLoggedIn, function (req, res) {
+    db.user.findAll({
+      where: {
+        username: req.params.user
+      },
+      include: [{ model: db.Score, attributes: ['game', [sequelize.fn('MAX', sequelize.col('points')), 'hiscore']] }],
+      attributes: [
+        'username',
+      ]
+
+
+
+
+    }).then(function (data) {
+      res.json(data);
+    });
+  });
 };
