@@ -16,7 +16,10 @@ exports.signin = function (req, res) {
 
 exports.dashboard = function (req, res) {
 
-    res.redirect('/');
+    res.render('index', {
+        msg: `Welcome ${req.user.username}`
+    });
+
 
 }
 

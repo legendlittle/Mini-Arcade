@@ -70,10 +70,10 @@ $(document).ready(function () {
       setTimeout(function () {
         $('#simon-sq').html(`<div class='${name} square mx-auto'> </div>`);
 
-      }, 1200 * i)
+      }, 1000 * i)
       setTimeout(function () {
         $('#simon-sq').empty();
-      }, 1200 * simon.length)
+      }, 1000 * simon.length)
     })
 
   })
