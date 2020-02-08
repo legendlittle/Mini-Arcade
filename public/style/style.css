@@ -1,19 +1,29 @@
 /* this is for styling the main arcade page */
+.dropdown {
+  text-align: right;
+}
 
-/* #index-body {
-  background-image: url(../images/1.jpg);
-  background-color: #cccccc;
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
+.nav-brand {
+  color: red;
+}
 
-#login-container {
-  padding-bottom: 50px;
-  padding-top: 20px;
+#loginBtn {
+  margin-left: 200px;
+}
+
+#homeLink {
+  color: rgb(132, 0, 255);
+}
+
+.navbar {
+  color: rgb(132, 0, 255);
+  border: 20px 20px 50px 20px;
+  background-color: #e7d749;
+  margin-bottom: 50px;
 }
 
 #play-now-btn {
-  background-color: rgb(253, 0, 219);
+  background-color: rgb(229, 74, 38);
   color: white;
 }
 
@@ -21,19 +31,40 @@
   color: rgb(207, 0, 243);
   font-weight: bold;
   font-size: large;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: rgb(29, 205, 218);
   border-radius: 25px;
 }
 
 #img-carousel {
-  width: 550px;
+  width: 575px;
   height: 350px;
 }
 
 body {
-  background-color: #a572ff75;
+  background: linear-gradient(to bottom, #c65bff 0%, #e7d749 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-#gamepad {
-  color: red;
+#gamepad1 {
+  color: rgb(153, 45, 220);
+  margin-bottom: 175px;
+}
+
+#gamepad2 {
+  color: rgb(251, 255, 35);
+  margin-bottom: 175px;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 20px;
+  background-color: #4e4e4e;
+  min-height: 60px;
+  width: 100%;
+  bottom: 0px;
+  color: #ede047;
 }

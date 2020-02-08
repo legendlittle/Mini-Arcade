@@ -5,7 +5,6 @@ function isLoggedIn(req, res, next) {
     return next();
   }
   res.json({ error: "401:Not authenticated" });
-
 }
 module.exports = function (app) {
   app.get("/scores", isLoggedIn, function (req, res) {
@@ -17,7 +16,7 @@ module.exports = function (app) {
     });
   });
 
-  // Create a new example
+  // route for the users scores to all games
   app.post("/scores", isLoggedIn, function (req, res) {
     db.Score.create(
       {
@@ -30,6 +29,7 @@ module.exports = function (app) {
     });
   });
 
+  // getting players high scores
   app.get('/:game/hiscores', isLoggedIn, function (req, res) {
     db.Score.findAll({
       where: {
@@ -39,9 +39,6 @@ module.exports = function (app) {
       attributes: ['game',
         [sequelize.fn('MAX', sequelize.col('points')), 'hiscore']
       ]
-
-
-
     }).then(function (data) {
       res.json(data);
     })
@@ -56,9 +53,6 @@ module.exports = function (app) {
       attributes: [
         'username',
       ]
-
-
-
 
     }).then(function (data) {
       res.json(data);

@@ -1,5 +1,5 @@
-module.exports = function(sequelize, Sequelize) {
- 
+module.exports = function (sequelize, Sequelize) {
+
     var User = sequelize.define('user', {
         id: {
             autoIncrement: true,
@@ -38,7 +38,7 @@ module.exports = function(sequelize, Sequelize) {
             defaultValue: 'active'
         }
     });
- 
+
     User.associate = function (models) {
 
         User.hasMany(models.Score, {
@@ -46,5 +46,5 @@ module.exports = function(sequelize, Sequelize) {
         });
     };
     return User;
- 
+
 };

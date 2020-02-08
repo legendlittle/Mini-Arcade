@@ -31,13 +31,10 @@ module.exports = function (app) {
         [sequelize.fn('MAX', sequelize.col('points')), 'hiscore']
       ]
 
-
-
     }).then(function (data) {
       ;
       res.render("simonSays", {
         ssHiScore: JSON.parse(JSON.stringify(data))[0].hiscore
-
 
       });
     });
@@ -55,14 +52,10 @@ module.exports = function (app) {
         [sequelize.fn('MAX', sequelize.col('points')), 'hiscore']
       ]
 
-
-
     }).then(function (data) {
       ;
       res.render("colorGame", {
         colorHiScore: JSON.parse(JSON.stringify(data))[0].hiscore
-
-
       });
     });
   });
