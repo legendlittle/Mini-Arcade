@@ -25,7 +25,7 @@ $(document).ready(function () {
   var wordRand = 0;
   var textRand = 0;
   var nounRand = 0;
-  var score = 0;
+  var score = 1;
   var promptRand = 0;
   var prompt;
   var game = true;
@@ -38,7 +38,9 @@ $(document).ready(function () {
     textRand = Math.floor(textRand);
     promptRand = Math.random() * 4;
     promptRand = Math.floor(promptRand)
-    if (btnRand === wordRand) {
+    shiftArray(btnColors, btnRand); //ADD TO MASTER
+    shiftArray(wordColors, wordRand); //ADD TO MASTER
+    if (btnRand === wordRand || btnColors[0] === wordColors[0]) {
       Randomize();
     }
 
@@ -81,8 +83,6 @@ $(document).ready(function () {
 
     Randomize();
     checkAnswer();
-    shiftArray(btnColors, btnRand);
-    shiftArray(wordColors, wordRand);
     shiftArray(words, textRand);
     console.log(btnColors, wordColors, words);
     makeButtons();
@@ -121,6 +121,9 @@ $(document).ready(function () {
       console.log('correct');
       score++;
       // console.log(score);
+      $('.colorScore').html(score);
+    } else {
+      score--;
       $('.colorScore').html(score);
     }
     $('#colorGameBtn').empty();
