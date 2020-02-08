@@ -2,19 +2,20 @@
 
   <div class="row mb-5">
     <div class="col-md-2">
-      {{!-- <button class="btn btn-danger btn-lg" href="/signin" id="loginBtn">Login</button> --}}
       <a class="btn btn-danger btn-lg" href="/signin" id="loginBtn">Login</a>
     </div>
     <div class="col-md-2">
-      {{!-- <button class="btn btn-danger btn-lg" href="/signup" id="signUp">Sign-Up</button> --}}
       <a class="btn btn-danger btn-lg" href="/signup" id="signUp">Sign-Up</a>
+    </div>
+    <div class="col-md-2">
+      <a class="btn btn-danger btn-lg" href="/signup" id="signUp">User High-Scores</a>
     </div>
   </div>
 
   <div class="row mt-5">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <div id="carouselExampleCaptions" class="carousel slide mt-5" data-ride="carousel">
+      <div id="carouselExampleCaptions" class="shake-slow shake-constant shake-constant--hover" class="carousel slide mt-5" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -59,8 +60,10 @@
   </div>
 
   <div class="row">
-    <div class="col-md-3"></div>
-    <i class="fas fa-gamepad" id="gamepad"></i>
+    <div class="col-md-3" class="shake-slow shake-constant shake-constant--hover" style="font-size: 28px;"></div>
+    <i class="fas fa-gamepad fa-10x" class="shake-slow shake-constant shake-constant--hover" id="gamepad">-</i>
+    <i class="fas fa-gamepad fa-10x" id="gamepad"></i>
     <div class="col-md-3"></div>
   </div>
+
 </div>

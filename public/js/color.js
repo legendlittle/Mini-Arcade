@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  var time = 5;
+  var time = 60;
 
   var btnColors = [
     'btn-primary',
