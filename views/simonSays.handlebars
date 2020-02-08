@@ -1,5 +1,6 @@
 <div class='container'>
 
+  {{!-- modal --}}
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -10,23 +11,65 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Choose if you want to go back to the arcade or play again!</p>
+          <p>Choose if you want to save your high-score and return to the arcade or play again!</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary btn-link home-link" href="#">Back
-            to the
-            arcade!</button>
           <button type="button" class="btn btn-outline-primary btn-link again" href="#">Play
             Again!</button>
-          <button type="button" id="save" class="btn btn-outline-primary btn-link home-link" href="#">Save
-            Score</button>
-          <button type="button" id="viewSimonScore" class="btn btn-outline-primary btn-link home-link"
-            href="http://localhost:3000/ss/hiscores">View High Score</button>
+          <button type="button" id="save" class="btn btn-outline-primary btn-link home-link" href="#">Save/Exit</button>
         </div>
       </div>
     </div>
   </div>
 
+  {{!-- navbar --}}
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand">The Boyzzz!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Home</a>
+        </li>
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Games
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/simonsays">Simon Sayz</a>
+            <a class="dropdown-item" href="/colorgame">Color Game</a>
+            <a class="dropdown-item" href="/hangman">Hang Man</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            High-Scores
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="http://localhost:3000/ss/hiscores">Simon Sayz</a>
+            <a class="dropdown-item" href="http://localhost:3000/cg/hiscores">Color Game</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="/signin" id="loginBtn">Login /</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/signup" id="signUp">Sign-Up</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
 
   <div class="jumbotron jumbotron-fluid bg-dark">
     <div class="container">
@@ -83,4 +126,13 @@
 <div id='simonBtns'>
   ​
 </div>
+
+{{!-- footer with copyright and link back to homepage/arcade --}}
+<footer>
+  <div class="footer-container">
+    Copyright &copy; The Boyzzz
+    <br>
+    <a id="back-to-top" href="/dashboard">Home</a>
+  </div>
+</footer>
 ​
