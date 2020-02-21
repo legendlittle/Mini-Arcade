@@ -1,4 +1,4 @@
-# PROJECT-2
+# Mini-Arcade
 > We are 'The Boyzzz' and this is an Arcade filled with some extremely challenging games. Sign Up now if you dare to challenge any of our high scores! Good Luck :)
 
 #### Team Members - [David Wong](https://github.com/blmlol "David's Github Page"), [Chris Genel](https://github.com/cgenel "Chris's Github Page"), & [Ryan Bigdoli](https://github.com/Ryan-Bidgoli "Ryan's Github Page")  - *The Boyzzz!*
@@ -68,3 +68,6 @@ To-do- list:
 
 ## Status
 Project is: _in progress_
+
+## Deployed Link
+https://peaceful-mountain-30216.herokuapp.com/
